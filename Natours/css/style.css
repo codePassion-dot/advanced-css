@@ -57,6 +57,7 @@ the background-size=cover means the box will fit smoothly in the viewport width
   position: absolute;
   top: 40%;
   left: 50%;
+  text-align: center;
   transform: translate(-50%, -50%);
 }
 
@@ -65,6 +66,7 @@ the background-size=cover means the box will fit smoothly in the viewport width
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 /* the display allows us to determine if it is a inline of a block element no matter what html element we put in the markup file 
@@ -126,4 +128,29 @@ with the animation-timing-function property we can determine the animation speed
     opacity: 1;
     transform: translate(0);
   }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
