@@ -98,6 +98,8 @@ with the animation-timing-function property we can determine the animation speed
   animation-timing-function: ease-out;
 }
 
+/* the translation that we made is according to the initial state just the title itself not the 0% state */
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -130,6 +132,26 @@ with the animation-timing-function property we can determine the animation speed
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* 
+
+the visited pseudo class determine if the user already visit the element, you can style it with some limit because of privacy concerns
+
+the transistion state is defined in the initial state (always), this determine to which property the animation is applied and the duration also
+
+To style links appropriately, put the :visited rule after the :link rule but before the :hover and :active rules, as defined by the LVHA-order: :link — :visited — :hover — :active. */
+
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -137,20 +159,56 @@ with the animation-timing-function property we can determine the animation speed
   padding: 15px 40px;
   display: inline-block;
   border-radius: 100px;
-  transition: all .2s;
+  transition: all 0.2s;
+  position: relative;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+/* the after pseudo element allows us to duplicate the original element, we will use this fantastic pseudo element for animation purposes. think it as a copy that you can manipulate 
+
+the z-index property determine which will be the position of the copy, -1 means it will be behind of the original one
+
+position is set to absolute and it position is relative to his parent (original button)
+*/
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+/* the animation-fill-mode property allow as to use the same propertys of the 0% animation state. We use this to put the bottom invisible until the animation starts */
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
 }
