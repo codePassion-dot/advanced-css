@@ -1,0 +1,41 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  padding: 30px;
+  color: #777;
+}
+
+/* the height property allow us to define how long will be the defined box, 95vh means it will take 95% of the viewport. In the browser we will see a little blank space (the remain 5%) in the bottom of the page. 
+
+the background-size=cover means the box will fit smoothly in the viewport width
+*/
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(128, 214, 113, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0,100% 0, 100% 75vh, 0 100%);
+}
