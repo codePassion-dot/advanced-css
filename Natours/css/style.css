@@ -60,14 +60,18 @@ the background-size=cover means the box will fit smoothly in the viewport width
   transform: translate(-50%, -50%);
 }
 
+/* backface-visibility is to fix animation shaky */
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden;
 }
 
 /* the display allows us to determine if it is a inline of a block element no matter what html element we put in the markup file 
 
 the letter-spacing allow us to define the space between each letter ina title
+
+with the animation-timing-function property we can determine the animation speed across the time. with ease-out value the animation will be faster in the start of the animation
 */
 
 .heading-primary-main {
@@ -75,6 +79,11 @@ the letter-spacing allow us to define the space between each letter ina title
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* animation-iteration-count: 3;
+  animation-delay: 3s; */
 }
 
 .heading-primary-sub {
@@ -82,4 +91,39 @@ the letter-spacing allow us to define the space between each letter ina title
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
