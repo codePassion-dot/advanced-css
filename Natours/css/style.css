@@ -7,10 +7,12 @@ Dark green: #28b485
 
 */
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html {
@@ -24,6 +26,7 @@ body {
   line-height: 1.7;
   padding: 3rem;
   color: #777;
+  box-sizing: border-box;
 }
 
 /* the height property allow us to define how long will be the defined box, 95vh means it will take 95% of the viewport. In the browser we will see a little blank space (the remain 5%) in the bottom of the page. 
@@ -175,7 +178,7 @@ To style links appropriately, put the :visited rule after the :link rule but bef
 
 .btn:active {
   transform: translateY(-1rem);
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
