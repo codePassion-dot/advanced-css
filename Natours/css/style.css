@@ -13,12 +13,16 @@ Dark green: #28b485
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.7;
-  padding: 30px;
+  padding: 3rem;
   color: #777;
 }
 
@@ -43,12 +47,12 @@ the background-size=cover means the box will fit smoothly in the viewport width
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 
 /* the transform property allows us to center an element. When we have to center a title it is not exactly 50% top 50% left, we need to put the center of the title it self int that 50% of it parent instead of the start of the title, that it is way we need to use transform */
@@ -66,7 +70,7 @@ the background-size=cover means the box will fit smoothly in the viewport width
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 /* the display allows us to determine if it is a inline of a block element no matter what html element we put in the markup file 
@@ -78,9 +82,9 @@ with the animation-timing-function property we can determine the animation speed
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -90,9 +94,9 @@ with the animation-timing-function property we can determine the animation speed
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
   animation-name: moveInRight;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -103,11 +107,11 @@ with the animation-timing-function property we can determine the animation speed
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
 
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
 
   100% {
@@ -119,11 +123,11 @@ with the animation-timing-function property we can determine the animation speed
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
 
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
 
   100% {
@@ -135,7 +139,7 @@ with the animation-timing-function property we can determine the animation speed
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(35px);
+    transform: translateY(3rem);
   }
 
   100% {
@@ -156,21 +160,22 @@ To style links appropriately, put the :visited rule after the :link rule but bef
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
+  font-size: 1.6rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   transition: all 0.2s;
   position: relative;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1rem);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
