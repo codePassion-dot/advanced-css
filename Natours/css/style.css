@@ -48,19 +48,19 @@ the background-size=cover means the box will fit smoothly in the viewport width
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem;
 }
 
 /* the transform property allows us to center an element. When we have to center a title it is not exactly 50% top 50% left, we need to put the center of the title it self int that 50% of it parent instead of the start of the title, that it is way we need to use transform */
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -83,7 +83,7 @@ the letter-spacing allow us to define the space between each letter ina title
 with the animation-timing-function property we can determine the animation speed across the time. with ease-out value the animation will be faster in the start of the animation
 */
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -95,7 +95,7 @@ with the animation-timing-function property we can determine the animation speed
   animation-delay: 3s; */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -181,7 +181,7 @@ To style links appropriately, put the :visited rule after the :link rule but bef
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -206,7 +206,7 @@ position is set to absolute and it position is relative to his parent (original 
   transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -216,7 +216,7 @@ position is set to absolute and it position is relative to his parent (original 
 }
 
 /* the animation-fill-mode property allow as to use the same propertys of the 0% animation state. We use this to put the bottom invisible until the animation starts */
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
