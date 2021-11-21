@@ -7,6 +7,8 @@ Dark green: #28b485
 
 */
 
+/* the box-sizing property equals to border-box allow us to use the width and the height property for the content and the padding area, which is more practical than using this properties only for the content area */
+
 *,
 *::after,
 *::before {
