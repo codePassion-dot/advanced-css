@@ -1,0 +1,67 @@
+/* 
+
+the visited pseudo class determine if the user already visit the element, you can style it with some limit because of privacy concerns
+
+the transistion state is defined in the initial state (always), this determine to which property the animation is applied and the duration also
+
+To style links appropriately, put the :visited rule after the :link rule but before the :hover and :active rules, as defined by the LVHA-order: :link — :visited — :hover — :active. */
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    font-size: 1.6rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+  }
+  &:hover {
+    transform: translateY(-3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    } 
+  }
+  
+  &:active {
+    transform: translateY(-1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  /* the after pseudo element allows us to duplicate the original element, we will use this fantastic pseudo element for animation purposes. think it as a copy that you can manipulate 
+  
+  the z-index property determine which will be the position of the copy, -1 means it will be behind of the original one
+  
+  position is set to absolute and it position is relative to his parent (original button)
+  */
+  
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  /* the animation-fill-mode property allow as to use the same propertys of the 0% animation state. We use this to put the bottom invisible until the animation starts */
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
